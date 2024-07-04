@@ -1,0 +1,21 @@
+PRIMARY_METRIC:
+  val/action_ed_marginalize
+METRIC_DESCENDING:
+  True
+DTYPE:
+  bfloat16
+TRAIN:
+  USE_MIXUP: True
+DATA:
+  DATA_ROOT_PATH: /home/zhong/Documents/datasets/ego4d
+  FEAT_DIR: [videomae_vitl_ego4d_verb_clips, videomae_vitl_ego4d_noun_clips]
+  DATASET_CLASS: Ego4D
+  PAST_STEP_IN_SEC: 0.53333333
+  VERSION: 2
+MODEL:
+  MODEL_CLASS: QueryMAMBA
+  CRITERION_CLASS: Criterion_Ego4D
+  IGNORE_INDEX: 0
+  INPUT_DIM: 2048
+  N_QUERIES: 20
+  PAST_CLS: True
